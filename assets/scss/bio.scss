@@ -1,0 +1,32 @@
+.bio {
+	max-width: 350px;
+	margin: 0 auto;
+	text-align: center;
+
+	.image {
+		border-radius: 50%;
+		margin-bottom: 20px;
+	}
+
+	.name {
+		font-size: 2.3rem;
+		font-weight: normal;
+		font-family: 'Source Code Pro', monospace;
+	}
+
+	.quip {
+		margin-top: 10px;
+	}
+
+	.social {
+		display: flex;
+		justify-content: center;
+		column-gap: 20px;
+		margin-top: 20px;
+
+		img {
+			filter: invert(1);
+			width: 40px;
+		}
+	}
+}
