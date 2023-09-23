@@ -1,0 +1,18 @@
+.pills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 20px 0;
+
+	.pill {
+		background-color: #3D5AFE;
+		font-size: 1.1rem;
+		padding: 5px 15px;
+		border-radius: 25px;
+		font-weight: bold;
+
+		&:nth-child(even) {
+			background-color: #7C4DFF;
+		}
+	}
+}

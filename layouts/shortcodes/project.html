@@ -1,0 +1,18 @@
+<div class="project">
+    <h2>
+        <a href="{{ .Get "link" }}" target="_blank">
+            {{ .Get "title" }}
+        </a>
+    </h2>
+    <p>{{ .Get "description" }}</p>
+    <div class="pills">
+        {{ range (split (.Get "tags") ",") }}
+            <div class="pill">
+                {{ . }}
+            </div>
+        {{ end }}
+    </div>
+    {{ $image := resources.GetMatch (.Get "image") }}
+    {{ $image := $image.Resize "700x webp" }}
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Get "title" }}" loading="{{ .Get "loading" }}">
+</div>
