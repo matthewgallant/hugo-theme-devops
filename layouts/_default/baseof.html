@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>{{ .Site.Title }}{{ if .Page.Title }} - {{ .Page.Title }}{{ end }}</title>
+        <meta name="description" content="{{ .Description }}">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+        {{ $options := dict "transpiler" "libsass" "targetPath" "css/styles.css" }}
+        {{ with resources.Get "scss/styles.scss" | toCSS $options | minify | fingerprint }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#9f00a7">
+        <meta name="theme-color" content="#202124">
+    </head>
+    <body>
+        {{- partial "header.html" . -}}
+        <main class="container">
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+        {{- $jsBundle := resources.Get "js/main.js" | js.Build | resources.Minify | fingerprint -}}
+        <script src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" defer></script>
+    </body>
+</html>

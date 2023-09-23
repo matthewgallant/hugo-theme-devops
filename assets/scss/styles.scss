@@ -1,0 +1,43 @@
+// Main CSS
+
+$primary: #202124;
+$secondary: transparentize(#303134, 0.6);
+
+@import 'reset.scss';
+
+@import 'footer.scss';
+@import 'header.scss';
+@import 'utilities.scss';
+
+body {
+	background-color: $primary;
+	color: #fff;
+	font-family: 'Nunito Sans', sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 30px 20px !important;
+}
+
+p {
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}

@@ -1,0 +1,8 @@
+name = "DevOps"
+description = "A theme inspired by developers around the world."
+homepage = "https://matthewgallant.me"
+min_version = "0.41.0"
+
+[author]
+	name = "Matthew Gallant"
+	homepage = "https://matthewgallant.me"
