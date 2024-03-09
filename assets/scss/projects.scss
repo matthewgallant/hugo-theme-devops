@@ -2,6 +2,23 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 50px;
+
+	.project {
+		display: flex;
+		flex-direction: column;
+
+		.project-image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			
+			img {
+				max-height: 350px;
+				width: auto;
+			}
+		}
+	}
 }
 
 @media (max-width: 800px) {

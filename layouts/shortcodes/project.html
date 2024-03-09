@@ -12,7 +12,9 @@
             </div>
         {{ end }}
     </div>
-    {{ $image := resources.GetMatch (.Get "image") }}
-    {{ $image := $image.Resize "700x webp" }}
-    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Get "title" }}" loading="{{ .Get "loading" }}">
+    <div class="project-image">
+        {{ $image := resources.GetMatch (.Get "image") }}
+        {{ $image := $image.Resize "1200x webp" }}
+        <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Get "title" }}" loading="{{ .Get "loading" }}">
+    </div>
 </div>
