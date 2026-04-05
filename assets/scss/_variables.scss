@@ -1,0 +1,4 @@
+@use "sass:color";
+
+$primary: #202124;
+$secondary: color.adjust(#303134, $alpha: -0.6);

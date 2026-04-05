@@ -1,17 +1,14 @@
 // Main CSS
 
-$primary: #202124;
-$secondary: transparentize(#303134, 0.6);
-
-@import 'reset.scss';
-
-@import 'bio.scss';
-@import 'footer.scss';
-@import 'header.scss';
-@import 'pills.scss';
-@import 'projects.scss';
-@import 'blog.scss';
-@import 'utilities.scss';
+@use 'variables' as *;
+@use 'reset' as *;
+@use 'bio' as *;
+@use 'footer' as *;
+@use 'header' as *;
+@use 'pills' as *;
+@use 'projects' as *;
+@use 'blog' as *;
+@use 'utilities' as *;
 
 body {
 	background-color: $primary;
